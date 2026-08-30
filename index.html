@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flowbase — Le hub de travail pour équipes produit</title>
+  <meta name="description" content="Flowbase réunit tâches, docs et automatisations dans un seul espace de travail rapide et sans friction. Essai gratuit de 14 jours, sans carte bancaire." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%235B4FE8%22/><path d=%22M9 16.5l4.5 4.5L23 11%22 stroke=%22white%22 stroke-width=%223%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================= NAV ============================= -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5.5 5.5L20 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Flowbase
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#features">Fonctionnalités</a>
+        <a href="#how-it-works">Comment ça marche</a>
+        <a href="#testimonials">Avis clients</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost btn-sm">Se connecter</a>
+        <a href="#pricing" class="btn btn-primary btn-sm">Essai gratuit</a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Ouvrir le menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Navigation mobile">
+      <a href="#features">Fonctionnalités</a>
+      <a href="#how-it-works">Comment ça marche</a>
+      <a href="#testimonials">Avis clients</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="btn btn-ghost btn-block">Se connecter</a>
+      <a href="#pricing" class="btn btn-primary btn-block">Essai gratuit</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============================= HERO ============================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 L4 14h6l-1 8 9-12h-6z"/></svg>
+            Nouveau — automatisations par IA
+          </span>
+          <h1>Le travail d'équipe, enfin sans friction</h1>
+          <p class="lede">Flowbase réunit tâches, documents et automatisations dans un seul espace rapide. Fini les dix onglets ouverts : votre équipe voit, décide et avance au même endroit.</p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary">Démarrer gratuitement</a>
+            <a href="#how-it-works" class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>
+              Voir la démo
+            </a>
+          </div>
+          <ul class="hero-meta">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>14 jours d'essai gratuit</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Sans carte bancaire</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Annulation en un clic</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="product-card">
+            <div class="product-card-bar"><span></span><span></span><span></span></div>
+
+            <div class="metric-row">
+              <div class="metric">
+                <span class="metric-label">Tâches livrées</span>
+                <span class="metric-value">1 284</span>
+                <span class="metric-delta">+18% ce mois</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Temps de cycle</span>
+                <span class="metric-value">2,1 j</span>
+                <span class="metric-delta">-32% ce mois</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Équipes actives</span>
+                <span class="metric-value">36</span>
+                <span class="metric-delta">+6 ce mois</span>
+              </div>
+            </div>
+
+            <div class="chart-mock" aria-hidden="true">
+              <i style="height:35%"></i><i style="height:55%"></i><i style="height:40%"></i>
+              <i style="height:70%"></i><i style="height:50%"></i><i style="height:85%"></i>
+              <i style="height:65%"></i><i style="height:95%"></i>
+            </div>
+
+            <div class="list-mock">
+              <div class="list-mock-row"><span class="dot"></span><span>Sprint Design System</span><span class="track"><em style="width:80%"></em></span></div>
+              <div class="list-mock-row"><span class="dot"></span><span>Migration API v2</span><span class="track"><em style="width:45%"></em></span></div>
+              <div class="list-mock-row"><span class="dot"></span><span>Onboarding client</span><span class="track"><em style="width:62%"></em></span></div>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>
+            Automatisation activée
+          </div>
+          <div class="floating-badge badge-bottom">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+            +42% de productivité
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= LOGOS ============================= -->
+    <section class="logo-strip">
+      <div class="container">
+        <p>Déjà adopté par des équipes chez</p>
+        <div class="logo-row">
+          <svg viewBox="0 0 100 26" fill="currentColor"><text x="0" y="19" font-family="Outfit, sans-serif" font-weight="700" font-size="19">Nordis</text></svg>
+          <svg viewBox="0 0 100 26" fill="currentColor"><text x="0" y="19" font-family="Outfit, sans-serif" font-weight="700" font-size="19">Vantly</text></svg>
+          <svg viewBox="0 0 100 26" fill="currentColor"><text x="0" y="19" font-family="Outfit, sans-serif" font-weight="700" font-size="19">Cirque</text></svg>
+          <svg viewBox="0 0 100 26" fill="currentColor"><text x="0" y="19" font-family="Outfit, sans-serif" font-weight="700" font-size="19">Halden</text></svg>
+          <svg viewBox="0 0 100 26" fill="currentColor"><text x="0" y="19" font-family="Outfit, sans-serif" font-weight="700" font-size="19">Kestro</text></svg>
+          <svg viewBox="0 0 100 26" fill="currentColor"><text x="0" y="19" font-family="Outfit, sans-serif" font-weight="700" font-size="19">Loomea</text></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= FEATURES ============================= -->
+    <section id="features">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Fonctionnalités</span>
+          <h2>Tout ce qu'il faut, rien de superflu</h2>
+          <p>Chaque fonctionnalité de Flowbase est pensée pour réduire le temps entre une idée et sa livraison.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <h3>Planification visuelle</h3>
+            <p>Organisez sprints et jalons sur un calendrier partagé qui se met à jour en temps réel pour toute l'équipe.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 L4 14h6l-1 8 9-12h-6z"/></svg>
+            </div>
+            <h3>Automatisations IA</h3>
+            <p>Décrivez une règle en langage naturel : assignations, rappels et rapports se déclenchent tout seuls.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+            </div>
+            <h3>Docs collaboratifs</h3>
+            <p>Rédigez des specs et comptes-rendus liés directement aux tâches, sans changer d'outil.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+            </div>
+            <h3>Rapports en direct</h3>
+            <p>Suivez vélocité, charge et délais avec des tableaux de bord générés automatiquement.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3>Sécurité d'entreprise</h3>
+            <p>SSO, permissions granulaires et chiffrement de bout en bout, conformes SOC 2 Type II.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+            </div>
+            <h3>Intégrations natives</h3>
+            <p>Connectez Slack, GitHub, Figma et plus de 40 outils sans configuration complexe.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= HOW IT WORKS ============================= -->
+    <section id="how-it-works" class="section-alt">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Mise en route</span>
+          <h2>Opérationnel en moins de 10 minutes</h2>
+          <p>Pas de formation obligatoire, pas de consultant : Flowbase s'adapte à la façon dont votre équipe travaille déjà.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step" data-reveal>
+            <h3>Importez votre espace</h3>
+            <p>Connectez Notion, Jira ou des fichiers CSV : votre historique est repris en un clic.</p>
+          </div>
+          <div class="step" data-reveal>
+            <h3>Configurez vos flux</h3>
+            <p>Créez des automatisations à partir de modèles prêts à l'emploi pour votre secteur.</p>
+          </div>
+          <div class="step" data-reveal>
+            <h3>Invitez l'équipe</h3>
+            <p>Partagez un lien, attribuez les rôles, et suivez l'avancement dès le premier jour.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= TESTIMONIALS ============================= -->
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Avis clients</span>
+          <h2>Des équipes qui livrent plus vite</h2>
+          <p>Plus de 3 200 équipes produit utilisent Flowbase au quotidien.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card" data-reveal>
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            </div>
+            <blockquote>« On a réduit notre temps de cycle de 30% dès le premier mois. Les automatisations remplacent trois outils qu'on payait séparément. »</blockquote>
+            <div class="testimonial-person">
+              <span class="avatar" aria-hidden="true">CM</span>
+              <div><strong>Camille Moreau</strong><span>Head of Product, Nordis</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" data-reveal>
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            </div>
+            <blockquote>« Migration depuis notre ancien outil en une après-midi. L'équipe support a répondu en quelques minutes, à chaque fois. »</blockquote>
+            <div class="testimonial-person">
+              <span class="avatar" aria-hidden="true">LB</span>
+              <div><strong>Lucas Bertrand</strong><span>CTO, Vantly</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" data-reveal>
+            <div class="stars" aria-label="5 étoiles sur 5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            </div>
+            <blockquote>« Enfin un outil que les designers et les développeurs utilisent tous les deux sans se plaindre. Ça change tout. »</blockquote>
+            <div class="testimonial-person">
+              <span class="avatar" aria-hidden="true">SR</span>
+              <div><strong>Sofia Ramos</strong><span>Design Lead, Cirque</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PRICING ============================= -->
+    <section id="pricing" class="section-alt">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Tarifs</span>
+          <h2>Un tarif simple, qui grandit avec vous</h2>
+          <p>Essai gratuit de 14 jours sur tous les plans. Changez ou annulez à tout moment.</p>
+        </div>
+
+        <div class="pricing-toggle" role="group" aria-label="Choisir la fréquence de facturation">
+          <button type="button" class="is-active" id="billMonthly" aria-pressed="true">Mensuel</button>
+          <button type="button" id="billYearly" aria-pressed="false">Annuel</button>
+          <span class="save-tag">Économisez 20%</span>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div>
+              <h3>Starter</h3>
+              <p class="plan-desc">Pour les petites équipes qui démarrent.</p>
+            </div>
+            <div class="price-amount">
+              <span class="amount"><span data-price-monthly="12" data-price-yearly="9">12€</span></span>
+              <span class="period">/ utilisateur / mois</span>
+            </div>
+            <a href="#" class="btn btn-ghost btn-block">Commencer l'essai</a>
+            <ul class="price-features">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Jusqu'à 10 membres</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Tâches et docs illimités</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>5 automatisations</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Support par email</li>
+            </ul>
+          </article>
+
+          <article class="price-card is-featured">
+            <span class="price-card-badge">Le plus populaire</span>
+            <div>
+              <h3>Growth</h3>
+              <p class="plan-desc">Pour les équipes en pleine croissance.</p>
+            </div>
+            <div class="price-amount">
+              <span class="amount"><span data-price-monthly="29" data-price-yearly="23">29€</span></span>
+              <span class="period">/ utilisateur / mois</span>
+            </div>
+            <a href="#" class="btn btn-primary btn-block">Commencer l'essai</a>
+            <ul class="price-features">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Membres illimités</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Automatisations illimitées</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Rapports avancés</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Intégrations premium</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Support prioritaire</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <div>
+              <h3>Enterprise</h3>
+              <p class="plan-desc">Pour les organisations à grande échelle.</p>
+            </div>
+            <div class="price-amount">
+              <span class="amount">Sur mesure</span>
+            </div>
+            <a href="#" class="btn btn-ghost btn-block">Contacter les ventes</a>
+            <ul class="price-features">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>SSO &amp; SCIM</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>SLA garanti 99,9%</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Déploiement dédié</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7"/></svg>Account manager dédié</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= FAQ ============================= -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">FAQ</span>
+          <h2>Des questions ? On répond.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Puis-je essayer Flowbase gratuitement ?
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Oui, tous les plans incluent un essai gratuit de 14 jours avec accès complet aux fonctionnalités, sans carte bancaire requise.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Puis-je changer de plan à tout moment ?
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Oui. Vous pouvez passer d'un plan à l'autre depuis vos paramètres, avec un ajustement au prorata sur votre prochaine facture.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Flowbase s'intègre-t-il à mes outils actuels ?
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Flowbase se connecte nativement à plus de 40 outils, dont Slack, GitHub, Figma, Notion et Google Workspace.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Mes données sont-elles sécurisées ?
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Toutes les données sont chiffrées au repos et en transit. Flowbase est conforme SOC 2 Type II et RGPD.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Proposez-vous un accompagnement à la migration ?
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Notre équipe vous accompagne gratuitement dans l'import de vos données depuis Notion, Jira, Trello ou un fichier CSV.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CTA ============================= -->
+    <section>
+      <div class="container">
+        <div class="cta-banner" data-reveal>
+          <h2>Prêt à simplifier le travail de votre équipe ?</h2>
+          <p>Rejoignez plus de 3 200 équipes qui utilisent déjà Flowbase pour livrer plus vite, ensemble.</p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-light">Démarrer gratuitement</a>
+            <a href="#" class="btn btn-ghost">Parler à l'équipe commerciale</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand">
+            <span class="brand-mark" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5.5 5.5L20 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Flowbase
+          </a>
+          <p>Le hub de travail pour équipes produit qui veulent livrer plus vite, ensemble.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Flowbase sur X (Twitter)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.9L4.4 22H1.3l8.1-9.3L1 2h7.1l4.9 6.3L18.9 2zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20z"/></svg></a>
+            <a href="#" aria-label="Flowbase sur LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.9-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>
+            <a href="#" aria-label="Flowbase sur GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>Produit</h4>
+            <ul>
+              <li><a href="#features">Fonctionnalités</a></li>
+              <li><a href="#pricing">Tarifs</a></li>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Sécurité</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ressources</h4>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Centre d'aide</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="#">À propos</a></li>
+              <li><a href="#">Carrières</a></li>
+              <li><a href="#">Partenaires</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Légal</h4>
+            <ul>
+              <li><a href="#">Confidentialité</a></li>
+              <li><a href="#">Conditions</a></li>
+              <li><a href="#">RGPD</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Flowbase, Inc. Tous droits réservés.</span>
+        <span>Conçu avec un système de design cohérent — Outfit + Work Sans.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
