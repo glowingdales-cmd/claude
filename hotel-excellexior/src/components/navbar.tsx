@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import NavLogo from "@/components/logo";
 
 const LINKS = [
   { href: "/", label: "Accueil" },
@@ -18,6 +19,7 @@ const LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -43,28 +45,34 @@ export default function Navbar() {
     >
       <nav
         aria-label="Navigation principale"
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8"
       >
-        <Link
-          href="/"
-          className="font-display text-xl font-semibold tracking-tight cursor-pointer"
-          style={{ color: scrolled || open ? "var(--color-ink)" : "#fff" }}
-          onClick={() => setOpen(false)}
-        >
-          Excellexior
-        </Link>
+        <NavLogo tone={scrolled || open ? "dark" : "light"} />
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul
+          className="hidden items-center gap-1 lg:flex"
+          onMouseLeave={() => setHovered(null)}
+        >
           {LINKS.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="relative">
               <Link
                 href={link.href}
-                className={`cursor-pointer text-sm font-medium transition-colors hover:text-brass ${
+                onMouseEnter={() => setHovered(link.href)}
+                className={`relative z-10 block cursor-pointer px-3 py-2 text-sm font-medium transition-colors ${
                   scrolled ? "text-ink" : "text-white"
                 }`}
               >
                 {link.label}
               </Link>
+              {hovered === link.href && (
+                <motion.span
+                  layoutId="nav-hover"
+                  className={`absolute inset-0 rounded-full ${
+                    scrolled ? "bg-ink/5" : "bg-white/10"
+                  }`}
+                  transition={{ type: "spring", stiffness: 420, damping: 32 }}
+                />
+              )}
             </li>
           ))}
         </ul>

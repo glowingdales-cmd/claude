@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import BrassDivider from "@/components/brass-divider";
 import FacebookIcon from "@/components/icons/facebook-icon";
+import { LogoMark } from "@/components/logo";
 
 export default function Footer() {
   return (
@@ -10,9 +11,12 @@ export default function Footer() {
       <BrassDivider variant="dark" />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-4 md:px-8">
         <div>
-          <p className="font-display text-2xl font-semibold text-white">
-            Hôtel Excellexior
-          </p>
+          <div className="flex items-center gap-3">
+            <LogoMark className="h-12 w-12" />
+            <p className="font-display text-2xl font-semibold text-white">
+              Hôtel Excellexior
+            </p>
+          </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-stone-soft/70">
             {SITE.tagline}. Chambres, salles de réunion, événementiel et
             parking sécurisé au cœur de {SITE.city}.

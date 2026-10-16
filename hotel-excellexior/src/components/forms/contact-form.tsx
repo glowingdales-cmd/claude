@@ -50,7 +50,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-5 cursor-pointer text-sm font-semibold text-laterite underline-offset-4 hover:underline"
+          className="mt-5 cursor-pointer text-sm font-semibold text-burgundy underline-offset-4 hover:underline"
         >
           Envoyer un autre message
         </button>
@@ -100,7 +100,7 @@ export default function ContactForm() {
       </Field>
 
       {status === "error" && (
-        <p role="alert" className="sm:col-span-2 text-sm font-medium text-laterite">
+        <p role="alert" className="sm:col-span-2 text-sm font-medium text-burgundy">
           Une erreur est survenue. Merci de réessayer dans un instant.
         </p>
       )}

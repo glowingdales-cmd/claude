@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Forest ink — deep green-black, the hills around Yaoundé */
-  --color-ink: #16241d;
-  --color-ink-soft: #20332a;
+  /* Ink — near-black with a whisper of wine undertone, for body copy
+     and large dark surfaces (nav, footer, hero overlay) */
+  --color-ink: #1c0e0f;
+  --color-ink-soft: #2a1517;
 
-  /* Warm stone — light canvas, not a stock cream */
+  /* Warm stone — light canvas */
   --color-stone: #eeeae0;
   --color-stone-soft: #f6f3ec;
 
-  /* Brass — hardware, the one accent color, used sparingly */
-  --color-brass: #c79a4b;
-  --color-brass-soft: #e0c893;
+  /* Brass/gold — sampled from the Hôtel Excellexior crest */
+  --color-brass: #e6970e;
+  --color-brass-soft: #f0bb4a;
 
-  /* Laterite — the red soil, reserved for small emphasis only */
-  --color-laterite: #9c4a2e;
-
-  --color-ink-50: #f3f5f3;
-  --color-ink-600: #3a4c41;
+  /* Burgundy — sampled from the crest's circle, the brand's signature
+     red: CTA accents, price emphasis, eyebrows, error states */
+  --color-burgundy: #73090e;
+  --color-burgundy-deep: #4a0609;
 }
 
 @theme inline {
@@ -27,7 +27,8 @@
   --color-stone-soft: var(--color-stone-soft);
   --color-brass: var(--color-brass);
   --color-brass-soft: var(--color-brass-soft);
-  --color-laterite: var(--color-laterite);
+  --color-burgundy: var(--color-burgundy);
+  --color-burgundy-deep: var(--color-burgundy-deep);
   /* --font-display / --font-body are injected on <html> by next/font in layout.tsx */
   --font-display: var(--font-display, ui-serif, Georgia, serif);
   --font-body: var(--font-body, ui-sans-serif, system-ui, sans-serif);

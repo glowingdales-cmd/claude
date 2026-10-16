@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Fraunces, Work_Sans } from "next/font/google";
+import { MotionConfig } from "framer-motion";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
 import WhatsAppButton from "@/components/whatsapp-button";
+import ScrollToTop from "@/components/scroll-to-top";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -47,8 +49,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className={`${fraunces.variable} ${workSans.variable}`}>
       <body className="min-h-screen flex flex-col bg-stone-soft text-ink antialiased">
-        {children}
-        <WhatsAppButton />
+        <MotionConfig reducedMotion="user">
+          {children}
+          <WhatsAppButton />
+          <ScrollToTop />
+        </MotionConfig>
       </body>
     </html>
   );

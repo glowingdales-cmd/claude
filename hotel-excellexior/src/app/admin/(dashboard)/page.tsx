@@ -44,7 +44,7 @@ export default async function AdminDashboardPage() {
       <section>
         <div className="flex items-center justify-between">
           <h2 className="font-display text-xl font-semibold text-ink">Dernières réservations</h2>
-          <Link href="/admin/reservations" className="cursor-pointer text-sm font-medium text-laterite hover:underline">
+          <Link href="/admin/reservations" className="cursor-pointer text-sm font-medium text-burgundy hover:underline">
             Voir tout
           </Link>
         </div>
@@ -84,7 +84,7 @@ export default async function AdminDashboardPage() {
       <section>
         <div className="flex items-center justify-between">
           <h2 className="font-display text-xl font-semibold text-ink">Derniers messages</h2>
-          <Link href="/admin/messages" className="cursor-pointer text-sm font-medium text-laterite hover:underline">
+          <Link href="/admin/messages" className="cursor-pointer text-sm font-medium text-burgundy hover:underline">
             Voir tout
           </Link>
         </div>

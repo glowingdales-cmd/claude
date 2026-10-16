@@ -40,7 +40,7 @@ export default function Faq() {
     <section className="px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-3xl">
         <Reveal className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-laterite">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
             Questions fréquentes
           </p>
           <h2 className="font-display mt-3 text-4xl font-semibold text-ink md:text-5xl">

@@ -43,7 +43,7 @@ export default function MessageRowActions({ id, status }: { id: string; status: 
         ))}
       </select>
       {isPending && <Loader2 className="h-3.5 w-3.5 animate-spin text-ink/40" aria-hidden="true" />}
-      {error && <span className="text-xs font-medium text-laterite">{error}</span>}
+      {error && <span className="text-xs font-medium text-burgundy">{error}</span>}
     </div>
   );
 }

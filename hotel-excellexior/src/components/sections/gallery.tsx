@@ -28,7 +28,7 @@ export default function Gallery() {
       <div className="mx-auto max-w-7xl">
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-laterite">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
               Galerie
             </p>
             <h2 className="font-display text-balance mt-3 text-4xl font-semibold text-ink md:text-5xl">
@@ -46,12 +46,12 @@ export default function Gallery() {
             <motion.div
               key={label}
               variants={staggerItem}
-              className={i === 0 ? "col-span-2 sm:col-span-1 sm:row-span-2" : ""}
+              className={`group overflow-hidden rounded-sm ${i === 0 ? "col-span-2 sm:col-span-1 sm:row-span-2" : ""}`}
             >
               <PhotoPlaceholder
                 icon={icon}
                 label={label}
-                className={`w-full rounded-sm ${i === 0 ? "aspect-square sm:aspect-auto sm:h-full" : "aspect-square"}`}
+                className={`w-full transition-transform duration-500 group-hover:scale-110 ${i === 0 ? "aspect-square sm:aspect-auto sm:h-full" : "aspect-square"}`}
               />
             </motion.div>
           ))}

@@ -14,7 +14,7 @@ export default function RoomsTeaser() {
       <div className="mx-auto max-w-7xl">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-laterite">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
               Hébergement
             </p>
             <h2 className="font-display text-balance mt-3 max-w-xl text-4xl font-semibold text-ink md:text-5xl">
@@ -23,7 +23,7 @@ export default function RoomsTeaser() {
           </div>
           <Link
             href="/chambres"
-            className="group inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-ink hover:text-laterite"
+            className="group inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-ink hover:text-burgundy"
           >
             Voir toutes les chambres
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -35,13 +35,15 @@ export default function RoomsTeaser() {
             <motion.div key={room.slug} variants={staggerItem}>
               <Link
                 href={`/chambres#${room.slug}`}
-                className="group block cursor-pointer overflow-hidden rounded-sm bg-stone-soft shadow-sm shadow-black/5 transition-shadow hover:shadow-lg hover:shadow-black/10"
+                className="group block cursor-pointer overflow-hidden rounded-sm bg-stone-soft shadow-sm shadow-black/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/15"
               >
-                <PhotoPlaceholder
-                  icon={BedDouble}
-                  label={`${room.name} — photo à venir`}
-                  className="aspect-[4/3] w-full"
-                />
+                <div className="overflow-hidden">
+                  <PhotoPlaceholder
+                    icon={BedDouble}
+                    label={`${room.name} — photo à venir`}
+                    className="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
                 <div className="p-5">
                   <h3 className="font-display text-lg font-semibold text-ink">
                     {room.name}
@@ -54,7 +56,7 @@ export default function RoomsTeaser() {
                       <Maximize className="h-3.5 w-3.5" aria-hidden="true" /> {room.size} m²
                     </span>
                   </div>
-                  <p className="mt-3 font-display text-xl font-semibold text-laterite">
+                  <p className="mt-3 font-display text-xl font-semibold text-burgundy">
                     {room.price.toLocaleString("fr-FR")} FCFA
                     <span className="text-xs font-normal text-ink/50"> / nuit</span>
                   </p>

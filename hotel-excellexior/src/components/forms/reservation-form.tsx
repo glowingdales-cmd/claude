@@ -78,7 +78,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-5 cursor-pointer text-sm font-semibold text-laterite underline-offset-4 hover:underline"
+          className="mt-5 cursor-pointer text-sm font-semibold text-burgundy underline-offset-4 hover:underline"
         >
           Faire une nouvelle réservation
         </button>
@@ -157,7 +157,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
 
       <fieldset className="sm:col-span-2">
         <legend className="text-sm font-medium text-ink">
-          Mode de paiement <span className="text-laterite">*</span>
+          Mode de paiement <span className="text-burgundy">*</span>
         </legend>
         <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
           {PAYMENT_METHODS.map((method) => (
@@ -172,7 +172,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
               <input
                 type="radio"
                 value={method.id}
-                className="h-4 w-4 accent-[var(--color-laterite)]"
+                className="h-4 w-4 accent-[var(--color-burgundy)]"
                 {...register("paymentMethod")}
               />
               {method.label}
@@ -187,7 +187,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
             <Smartphone className="h-4 w-4 text-brass" aria-hidden="true" />
             Déposez l&apos;acompte sur le {activePayment.label} suivant :
           </p>
-          <p className="mt-1.5 font-display text-lg font-semibold text-laterite">
+          <p className="mt-1.5 font-display text-lg font-semibold text-burgundy">
             {activePayment.number}
           </p>
           <p className="mt-1 text-xs text-ink/60">
@@ -222,7 +222,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
       </Field>
 
       {status === "error" && (
-        <p role="alert" className="sm:col-span-2 text-sm font-medium text-laterite">
+        <p role="alert" className="sm:col-span-2 text-sm font-medium text-burgundy">
           Une erreur est survenue. Vérifiez votre connexion et réessayez, ou
           contactez-nous directement sur WhatsApp.
         </p>

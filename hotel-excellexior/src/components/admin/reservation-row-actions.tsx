@@ -71,7 +71,7 @@ export default function ReservationRowActions({
         </select>
         {isPending && <Loader2 className="h-3.5 w-3.5 animate-spin text-ink/40" aria-hidden="true" />}
       </div>
-      {error && <p className="text-xs font-medium text-laterite">{error}</p>}
+      {error && <p className="text-xs font-medium text-burgundy">{error}</p>}
     </div>
   );
 }

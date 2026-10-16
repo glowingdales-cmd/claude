@@ -22,7 +22,7 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-laterite">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
             Notre maison
           </p>
           <h2 className="font-display text-balance mt-3 text-4xl font-semibold text-ink md:text-5xl">

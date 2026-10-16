@@ -79,7 +79,7 @@ export default function LoginForm({ nextPath }: { nextPath: string }) {
         </div>
 
         {status === "error" && (
-          <p role="alert" className="text-sm font-medium text-laterite">
+          <p role="alert" className="text-sm font-medium text-burgundy">
             {errorMessage}
           </p>
         )}

@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import SiteIntro from "@/components/site-intro";
 import Hero from "@/components/sections/hero";
 import StatsStrip from "@/components/sections/stats-strip";
 import About from "@/components/sections/about";
@@ -17,6 +18,7 @@ import FinalCta from "@/components/sections/final-cta";
 export default function HomePage() {
   return (
     <>
+      <SiteIntro />
       <Navbar />
       <main>
         <Hero />

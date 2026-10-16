@@ -9,7 +9,7 @@ export default function Location() {
     <section className="px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <Reveal className="max-w-xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-laterite">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
             Nous trouver
           </p>
           <h2 className="font-display text-balance mt-3 text-4xl font-semibold text-ink md:text-5xl">

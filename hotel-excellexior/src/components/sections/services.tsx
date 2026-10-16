@@ -34,7 +34,7 @@ export default function Services() {
     <section id="services" className="scroll-mt-24 bg-stone px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <Reveal className="max-w-xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-laterite">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
             À votre service
           </p>
           <h2 className="font-display text-balance mt-3 text-4xl font-semibold text-ink md:text-5xl">
@@ -49,7 +49,7 @@ export default function Services() {
               variants={staggerItem}
               className="flex flex-col items-center gap-3 rounded-sm bg-stone-soft p-5 text-center shadow-sm shadow-black/5"
             >
-              <Icon className="h-6 w-6 text-laterite" aria-hidden="true" />
+              <Icon className="h-6 w-6 text-burgundy" aria-hidden="true" />
               <p className="text-xs font-medium leading-snug text-ink/80">{label}</p>
             </motion.div>
           ))}

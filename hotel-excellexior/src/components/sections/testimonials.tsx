@@ -54,7 +54,7 @@ export default function Testimonials() {
     <section className="bg-stone px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-laterite">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
             Ils nous ont fait confiance
           </p>
           <h2 className="font-display mt-3 text-4xl font-semibold text-ink md:text-5xl">

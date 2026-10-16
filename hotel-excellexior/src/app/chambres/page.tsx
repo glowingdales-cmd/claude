@@ -80,7 +80,7 @@ export default function ChambresPage() {
                     ))}
                   </ul>
                   <div className="mt-7 flex flex-wrap items-center gap-5">
-                    <p className="font-display text-2xl font-semibold text-laterite">
+                    <p className="font-display text-2xl font-semibold text-burgundy">
                       {room.price.toLocaleString("fr-FR")} FCFA
                       <span className="text-sm font-normal text-ink/50"> / nuit</span>
                     </p>
