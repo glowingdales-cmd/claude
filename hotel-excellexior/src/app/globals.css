@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  /* Forest ink — deep green-black, the hills around Yaoundé */
+  --color-ink: #16241d;
+  --color-ink-soft: #20332a;
+
+  /* Warm stone — light canvas, not a stock cream */
+  --color-stone: #eeeae0;
+  --color-stone-soft: #f6f3ec;
+
+  /* Brass — hardware, the one accent color, used sparingly */
+  --color-brass: #c79a4b;
+  --color-brass-soft: #e0c893;
+
+  /* Laterite — the red soil, reserved for small emphasis only */
+  --color-laterite: #9c4a2e;
+
+  --color-ink-50: #f3f5f3;
+  --color-ink-600: #3a4c41;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-stone: var(--color-stone);
+  --color-stone-soft: var(--color-stone-soft);
+  --color-brass: var(--color-brass);
+  --color-brass-soft: var(--color-brass-soft);
+  --color-laterite: var(--color-laterite);
+  /* --font-display / --font-body are injected on <html> by next/font in layout.tsx */
+  --font-display: var(--font-display, ui-serif, Georgia, serif);
+  --font-body: var(--font-body, ui-sans-serif, system-ui, sans-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-stone-soft);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Signature motif: a repeating lozenge "brass rule", abstracted from the
+   beaded edge of Cameroonian ceremonial toghu cloth. Used as the one
+   recurring divider across the site instead of a plain <hr>. */
+.brass-rule {
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-brass) 0px,
+    var(--color-brass) 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  background-size: 14px 10px;
+  opacity: 0.9;
+}
+
+.brass-rule-dark {
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-brass-soft) 0px,
+    var(--color-brass-soft) 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  background-size: 14px 10px;
+  opacity: 0.55;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
