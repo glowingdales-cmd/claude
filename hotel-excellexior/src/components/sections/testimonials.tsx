@@ -117,7 +117,7 @@ export default function Testimonials() {
                   aria-label={`Témoignage ${i + 1} sur ${count}`}
                   onClick={() => go(i)}
                   className={`h-2 w-2 cursor-pointer rounded-full transition-colors ${
-                    i === index ? "bg-brass" : "bg-ink/20"
+                    i === index ? "bg-brass" : "bg-burgundy/20"
                   }`}
                 />
               ))}

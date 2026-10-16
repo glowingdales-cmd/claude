@@ -31,7 +31,7 @@ const FEATURES = [
 
 export default function Parking() {
   return (
-    <section id="parking" className="scroll-mt-24 bg-ink px-6 py-20 text-white md:px-8 md:py-28">
+    <section id="parking" className="scroll-mt-24 bg-burgundy px-6 py-20 text-white md:px-8 md:py-28">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brass">

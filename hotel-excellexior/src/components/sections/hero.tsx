@@ -18,7 +18,7 @@ export default function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20"
+        className="absolute inset-0 bg-gradient-to-t from-burgundy via-burgundy/70 to-burgundy/20"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-8 md:pb-24">
@@ -80,7 +80,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.5 }}
-        className="relative z-10 mb-8 ml-auto mr-6 hidden max-w-xs rounded-lg border border-white/15 bg-ink/70 px-5 py-4 backdrop-blur-md md:mr-10 md:block"
+        className="relative z-10 mb-8 ml-auto mr-6 hidden max-w-xs rounded-lg border border-white/15 bg-burgundy/70 px-5 py-4 backdrop-blur-md md:mr-10 md:block"
       >
         <div className="flex items-center gap-2 text-brass">
           <PlaneLanding className="h-4 w-4" aria-hidden="true" />

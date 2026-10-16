@@ -21,7 +21,7 @@ export default async function AdminDashboardLayout({
 
   return (
     <div className="min-h-screen bg-stone-soft">
-      <header className="sticky top-0 z-30 flex items-center justify-between border-b border-ink/10 bg-ink px-6 py-4 text-white md:px-8">
+      <header className="sticky top-0 z-30 flex items-center justify-between border-b border-ink/10 bg-burgundy px-6 py-4 text-white md:px-8">
         <div className="flex items-center gap-8">
           <span className="font-display text-lg font-semibold">Excellexior · Admin</span>
           <nav aria-label="Navigation administration" className="hidden items-center gap-6 md:flex">
@@ -45,7 +45,7 @@ export default async function AdminDashboardLayout({
         </div>
       </header>
 
-      <nav aria-label="Navigation administration mobile" className="flex gap-1 overflow-x-auto border-b border-ink/10 bg-ink px-4 py-2 md:hidden">
+      <nav aria-label="Navigation administration mobile" className="flex gap-1 overflow-x-auto border-b border-ink/10 bg-burgundy px-4 py-2 md:hidden">
         {NAV.map(({ href, label, icon: Icon }) => (
           <Link
             key={href}

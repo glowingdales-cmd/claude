@@ -68,7 +68,7 @@ export default function EventsMeeting() {
         <Reveal delay={0.1} className="mt-10 flex justify-center">
           <Link
             href="/contact#reservation"
-            className="cursor-pointer rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105"
+            className="cursor-pointer rounded-full bg-burgundy px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105"
           >
             Demander un devis événementiel
           </Link>

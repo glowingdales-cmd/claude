@@ -232,7 +232,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-burgundy px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
           Envoyer ma demande de réservation

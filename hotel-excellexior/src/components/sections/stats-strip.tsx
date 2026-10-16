@@ -11,7 +11,7 @@ const STATS = [
 
 export default function StatsStrip() {
   return (
-    <section className="bg-ink text-white">
+    <section className="bg-burgundy text-white">
       <Reveal>
         <dl className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 px-6 md:grid-cols-4 md:divide-y-0 md:px-8">
           {STATS.map(({ icon: Icon, value, label }) => (

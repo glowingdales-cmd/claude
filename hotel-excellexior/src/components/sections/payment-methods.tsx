@@ -22,7 +22,7 @@ const STEPS = [
 
 export default function PaymentMethods() {
   return (
-    <section className="bg-ink px-6 py-20 text-white md:px-8 md:py-28">
+    <section className="bg-burgundy px-6 py-20 text-white md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <Reveal className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brass">

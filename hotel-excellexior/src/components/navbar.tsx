@@ -68,7 +68,7 @@ export default function Navbar() {
                 <motion.span
                   layoutId="nav-hover"
                   className={`absolute inset-0 rounded-full ${
-                    scrolled ? "bg-ink/5" : "bg-white/10"
+                    scrolled ? "bg-burgundy/5" : "bg-white/10"
                   }`}
                   transition={{ type: "spring", stiffness: 420, damping: 32 }}
                 />
@@ -123,7 +123,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block cursor-pointer rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-ink/5"
+                    className="block cursor-pointer rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-burgundy/5"
                   >
                     {link.label}
                   </Link>

@@ -35,7 +35,7 @@ export default function SiteIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: "easeInOut" }}
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-ink"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-burgundy"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.75 }}

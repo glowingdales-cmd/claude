@@ -12,7 +12,7 @@ export default async function AdminLoginPage({
   const nextPath = next && next.startsWith("/admin") ? next : "/admin";
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-ink px-6">
+    <main className="flex min-h-screen items-center justify-center bg-burgundy px-6">
       <LoginForm nextPath={nextPath} />
     </main>
   );

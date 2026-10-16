@@ -21,8 +21,8 @@ export default function PhotoPlaceholder({
     <div
       className={`relative isolate flex items-center justify-center overflow-hidden ${
         tone === "dark"
-          ? "bg-gradient-to-br from-ink via-ink-soft to-ink"
-          : "bg-gradient-to-br from-ink-soft via-ink to-[#0f1a14]"
+          ? "bg-gradient-to-br from-burgundy-deep via-burgundy to-ink"
+          : "bg-gradient-to-br from-burgundy via-burgundy-deep to-ink"
       } ${className}`}
     >
       <div
@@ -38,7 +38,7 @@ export default function PhotoPlaceholder({
         className="relative h-14 w-14 text-brass/50 sm:h-16 sm:w-16"
         strokeWidth={1.25}
       />
-      <span className="absolute bottom-3 left-3 rounded-sm bg-ink/70 px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-stone-soft/80 backdrop-blur-sm">
+      <span className="absolute bottom-3 left-3 rounded-sm bg-ink/60 px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-stone-soft/80 backdrop-blur-sm">
         {label}
       </span>
     </div>

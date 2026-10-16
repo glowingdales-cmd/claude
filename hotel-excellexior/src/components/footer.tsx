@@ -7,7 +7,7 @@ import { LogoMark } from "@/components/logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-stone-soft/90">
+    <footer className="bg-burgundy text-stone-soft/90">
       <BrassDivider variant="dark" />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-4 md:px-8">
         <div>
