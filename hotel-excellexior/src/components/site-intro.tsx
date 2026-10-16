@@ -24,9 +24,18 @@ export default function SiteIntro() {
     // to show this one-time overlay is only known after mount.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setShow(true);
+  }, []);
+
+  // Kept separate from the mount-guard effect above: in development,
+  // React Strict Mode runs that effect twice, and since its sessionStorage
+  // guard short-circuits the second run, a dismiss timer scheduled inside
+  // it would get armed then immediately cleared, leaving the intro stuck.
+  // This effect re-arms safely because it keys off the `show` state itself.
+  useEffect(() => {
+    if (!show) return;
     const timer = setTimeout(() => setShow(false), 1100);
     return () => clearTimeout(timer);
-  }, []);
+  }, [show]);
 
   return (
     <AnimatePresence>
