@@ -63,3 +63,11 @@ model Photo {
 
   @@index([album, position])
 }
+
+// Admin overrides of the site texts edited in /admin/textes: one row per
+// section of DEFAULT_CONTENT (src/lib/content.ts), `value` is its JSON.
+model SiteText {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}

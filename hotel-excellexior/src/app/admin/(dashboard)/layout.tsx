@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BedDouble, Images, KeyRound, LayoutDashboard, Mail } from "lucide-react";
+import { BedDouble, Images, KeyRound, LayoutDashboard, Mail, Type } from "lucide-react";
 import { getSession } from "@/lib/auth";
 import LogoutButton from "@/components/admin/logout-button";
 
@@ -8,6 +8,7 @@ const NAV = [
   { href: "/admin/reservations", label: "Réservations", icon: BedDouble },
   { href: "/admin/messages", label: "Messages", icon: Mail },
   { href: "/admin/photos", label: "Photos", icon: Images },
+  { href: "/admin/textes", label: "Textes", icon: Type },
   { href: "/admin/mot-de-passe", label: "Mot de passe", icon: KeyRound },
 ];
 

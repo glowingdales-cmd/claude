@@ -1,39 +1,23 @@
 import Link from "next/link";
 import { CalendarCheck, MessageCircle, Smartphone, Wallet } from "lucide-react";
 import Reveal from "@/components/motion/reveal";
+import type { SiteContent } from "@/lib/content";
 
-const STEPS = [
-  {
-    icon: CalendarCheck,
-    title: "1. Choisissez vos dates",
-    description: "Sélectionnez votre chambre, vos dates et le nombre de voyageurs sur le formulaire de réservation.",
-  },
-  {
-    icon: Smartphone,
-    title: "2. Payez un acompte",
-    description: "Réglez l'acompte via Orange Money, MTN Mobile Money, ou optez pour un paiement à l'arrivée.",
-  },
-  {
-    icon: MessageCircle,
-    title: "3. Recevez la confirmation",
-    description: "Notre équipe confirme votre réservation par email ou WhatsApp sous quelques heures.",
-  },
-];
+const ICONS = [CalendarCheck, Smartphone, MessageCircle];
 
-export default function PaymentMethods() {
+export default function PaymentMethods({ content }: { content: SiteContent["payment"] }) {
   return (
     <section className="bg-burgundy px-6 py-20 text-white md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <Reveal className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brass">
-            Réservation simple & locale
+            {content.eyebrow}
           </p>
           <h2 className="font-display text-balance mt-3 text-4xl font-semibold md:text-5xl">
-            Payez comme vous le souhaitez
+            {content.title}
           </h2>
           <p className="mt-5 max-w-lg text-base leading-relaxed text-stone-soft/70">
-            Nous acceptons les moyens de paiement mobile les plus utilisés au
-            Cameroun, en plus du paiement en espèces à votre arrivée.
+            {content.text}
           </p>
         </Reveal>
 
@@ -50,13 +34,16 @@ export default function PaymentMethods() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
-          {STEPS.map(({ icon: Icon, title, description }) => (
-            <Reveal key={title}>
+          {content.steps.map(({ title, description }, i) => {
+            const Icon = ICONS[i];
+            return (
+            <Reveal key={i}>
               <Icon className="h-6 w-6 text-brass" aria-hidden="true" />
               <p className="mt-3 font-display text-lg font-semibold">{title}</p>
               <p className="mt-1.5 text-sm leading-relaxed text-stone-soft/65">{description}</p>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
 
         <Reveal delay={0.1} className="mt-12">
@@ -64,7 +51,7 @@ export default function PaymentMethods() {
             href="/contact#reservation"
             className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-brass px-7 py-3.5 text-sm font-semibold text-ink transition-transform hover:scale-105"
           >
-            Démarrer ma réservation
+            {content.cta}
           </Link>
         </Reveal>
       </div>

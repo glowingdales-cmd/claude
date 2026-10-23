@@ -4,34 +4,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Reveal from "@/components/motion/reveal";
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "Séminaire de 80 personnes organisé sans accroc : salle impeccable, pause-café soignée et équipe aux petits soins.",
-    name: "Brice M.",
-    role: "Directeur commercial, Yaoundé",
-  },
-  {
-    quote:
-      "Notre mariage dans le jardin de l'hôtel restera gravé dans nos mémoires. Décoration, traiteur et parking pour nos invités : tout était parfait.",
-    name: "Carine & Steve",
-    role: "Mariés en 2025",
-  },
-  {
-    quote:
-      "En déplacement professionnel toutes les semaines, je choisis toujours l'Excellexior : chambre calme, Wi-Fi rapide et parking sécurisé pour mon véhicule.",
-    name: "Dr. Ngo Bisseck",
-    role: "Consultant indépendant",
-  },
-];
+import type { SiteContent } from "@/lib/content";
 
 const AUTOPLAY_MS = 6000;
 
-export default function Testimonials() {
+export default function Testimonials({ content }: { content: SiteContent["testimonials"] }) {
+  // An emptied quote in the admin hides that testimonial.
+  const testimonials = content.items.filter((t) => t.quote.trim() !== "");
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const count = TESTIMONIALS.length;
+  const count = testimonials.length;
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const go = useCallback((next: number) => {
@@ -48,17 +30,18 @@ export default function Testimonials() {
     };
   }, [index, paused, go]);
 
-  const current = TESTIMONIALS[index];
+  const current = testimonials[index % Math.max(count, 1)];
+  if (!current) return null;
 
   return (
     <section className="bg-stone px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
-            Ils nous ont fait confiance
+            {content.eyebrow}
           </p>
           <h2 className="font-display mt-3 text-4xl font-semibold text-ink md:text-5xl">
-            La parole à nos clients
+            {content.title}
           </h2>
         </Reveal>
 
@@ -108,9 +91,9 @@ export default function Testimonials() {
             </button>
 
             <div className="flex gap-2" role="tablist" aria-label="Choisir un témoignage">
-              {TESTIMONIALS.map((t, i) => (
+              {testimonials.map((t, i) => (
                 <button
-                  key={t.name}
+                  key={i}
                   type="button"
                   role="tab"
                   aria-selected={i === index}

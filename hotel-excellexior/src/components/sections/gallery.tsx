@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import Reveal from "@/components/motion/reveal";
 import HotelPhoto from "@/components/hotel-photo";
 import type { SitePhoto } from "@/lib/photos";
+import type { SiteContent } from "@/lib/content";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -49,7 +50,7 @@ const tile: Variants = {
   },
 };
 
-export default function Gallery({ photos }: { photos: SitePhoto[] }) {
+export default function Gallery({ photos, content }: { photos: SitePhoto[]; content: SiteContent["gallery"] }) {
   const [open, setOpen] = useState<number | null>(null);
 
   if (photos.length === 0) return null;
@@ -60,16 +61,14 @@ export default function Gallery({ photos }: { photos: SitePhoto[] }) {
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brass">
-              Galerie
+              {content.eyebrow}
             </p>
             <h2 className="font-display text-balance mt-3 text-4xl font-semibold text-white md:text-5xl">
-              L&apos;hôtel en images
+              {content.title}
             </h2>
           </div>
           <p className="max-w-sm text-sm text-stone-soft/60">
-            Chambres, salles, réceptions et cour intérieure : découvrez
-            l&apos;Hôtel Excellexior tel que nos clients le vivent. Touchez une
-            photo pour l&apos;agrandir.
+            {content.text}
           </p>
         </Reveal>
 

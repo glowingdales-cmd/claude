@@ -6,11 +6,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { CheckCircle2, Loader2, Smartphone } from "lucide-react";
 import { reservationSchema, type ReservationInput } from "@/lib/validation";
-import { ROOM_TYPES, PAYMENT_METHODS } from "@/lib/constants";
+import { PAYMENT_METHODS } from "@/lib/constants";
+import type { roomsWithContent } from "@/lib/content";
 import Field from "@/components/forms/field";
 import { inputClass, inputErrorClass } from "@/components/forms/styles";
 
-export default function ReservationForm({ defaultRoom }: { defaultRoom?: string }) {
+export default function ReservationForm({
+  defaultRoom,
+  rooms,
+}: {
+  defaultRoom?: string;
+  /** Room types with the names and prices set in the admin texts. */
+  rooms: ReturnType<typeof roomsWithContent>;
+}) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const {
@@ -22,7 +30,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
   } = useForm<ReservationInput>({
     resolver: zodResolver(reservationSchema),
     defaultValues: {
-      roomType: defaultRoom && ROOM_TYPES.some((r) => r.slug === defaultRoom) ? defaultRoom : ROOM_TYPES[0].slug,
+      roomType: defaultRoom && rooms.some((r) => r.slug === defaultRoom) ? defaultRoom : rooms[0].slug,
       guests: 1,
       paymentMethod: "CASH_ON_ARRIVAL",
       notes: "",
@@ -118,7 +126,7 @@ export default function ReservationForm({ defaultRoom }: { defaultRoom?: string 
 
       <Field label="Type de chambre" htmlFor="res-roomType" required error={errors.roomType?.message}>
         <select id="res-roomType" className={inputClass} {...register("roomType")}>
-          {ROOM_TYPES.map((room) => (
+          {rooms.map((room) => (
             <option key={room.slug} value={room.slug}>
               {room.name} — {room.price.toLocaleString("fr-FR")} FCFA/nuit
             </option>

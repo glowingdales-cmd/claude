@@ -4,35 +4,11 @@ import { useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 import Reveal from "@/components/motion/reveal";
+import type { SiteContent } from "@/lib/content";
 
-const FAQS = [
-  {
-    question: "Quels sont les horaires d'arrivée et de départ ?",
-    answer: "L'arrivée (check-in) est possible à partir de 14h00 et le départ (check-out) avant 12h00. Un départ tardif peut être organisé sur demande, selon disponibilité.",
-  },
-  {
-    question: "Le parking est-il payant ?",
-    answer: "Le parking interne est gratuit pour les clients résidents. Le parking externe est disponible pour les visiteurs et invités d'événements, avec un tarif préférentiel communiqué à la réservation.",
-  },
-  {
-    question: "Puis-je payer par Orange Money ou MTN Mobile Money ?",
-    answer: "Oui. Lors de la réservation, choisissez Orange Money ou MTN Mobile Money : vous recevrez le numéro marchand et les instructions pour effectuer votre dépôt, puis indiquerez la référence de transaction.",
-  },
-  {
-    question: "Organisez-vous des mariages et événements d'entreprise ?",
-    answer: "Oui, notre équipe événementielle organise mariages, réceptions et réunions professionnelles jusqu'à 300 invités, avec traiteur, décoration et parking dédié.",
-  },
-  {
-    question: "Y a-t-il une politique d'annulation ?",
-    answer: "Les réservations peuvent être annulées ou modifiées gratuitement jusqu'à 48h avant l'arrivée. Contactez-nous par téléphone, email ou WhatsApp pour toute modification.",
-  },
-  {
-    question: "Le Wi-Fi est-il inclus ?",
-    answer: "Le Wi-Fi fibre haut débit est gratuit dans toutes les chambres et espaces communs de l'hôtel.",
-  },
-];
-
-export default function Faq() {
+export default function Faq({ content }: { content: SiteContent["faq"] }) {
+  // An emptied question in the admin hides that entry.
+  const items = content.items.filter((item) => item.question.trim() !== "");
   const [open, setOpen] = useState<number | null>(0);
   const baseId = useId();
 
@@ -41,20 +17,20 @@ export default function Faq() {
       <div className="mx-auto max-w-3xl">
         <Reveal className="text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
-            Questions fréquentes
+            {content.eyebrow}
           </p>
           <h2 className="font-display mt-3 text-4xl font-semibold text-ink md:text-5xl">
-            Tout ce qu&apos;il faut savoir
+            {content.title}
           </h2>
         </Reveal>
 
         <div className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
-          {FAQS.map((item, i) => {
+          {items.map((item, i) => {
             const isOpen = open === i;
             const panelId = `${baseId}-panel-${i}`;
             const buttonId = `${baseId}-button-${i}`;
             return (
-              <div key={item.question}>
+              <div key={i}>
                 <h3>
                   <button
                     id={buttonId}

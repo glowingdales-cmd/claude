@@ -6,6 +6,8 @@ import Reveal from "@/components/motion/reveal";
 import ReservationForm from "@/components/forms/reservation-form";
 import ContactForm from "@/components/forms/contact-form";
 import { SITE } from "@/lib/constants";
+import { roomsWithContent } from "@/lib/content";
+import { getSiteContent } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Contact & Réservation",
@@ -18,7 +20,7 @@ export default async function ContactPage({
 }: {
   searchParams: Promise<{ chambre?: string }>;
 }) {
-  const { chambre } = await searchParams;
+  const [{ chambre }, content] = await Promise.all([searchParams, getSiteContent()]);
   const whatsappMessage = encodeURIComponent(
     "Bonjour Hôtel Excellexior, je souhaite avoir des informations."
   );
@@ -72,7 +74,7 @@ export default async function ContactPage({
               </p>
             </Reveal>
             <Reveal delay={0.1} className="mt-8 rounded-sm bg-stone-soft p-6 shadow-sm shadow-black/5 md:p-10">
-              <ReservationForm defaultRoom={chambre} />
+              <ReservationForm defaultRoom={chambre} rooms={roomsWithContent(content)} />
             </Reveal>
           </div>
         </section>

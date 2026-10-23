@@ -14,6 +14,7 @@ import { ArrowRight, ChevronDown, MapPin, PlaneLanding } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import HotelPhoto from "@/components/hotel-photo";
 import { useIntroDone } from "@/components/motion/intro-state";
+import type { SiteContent } from "@/lib/content";
 
 const SLIDES = [
   { src: "/photos/facade-nuit.webp", alt: "Façade de l'Hôtel Excellexior illuminée de nuit" },
@@ -23,9 +24,8 @@ const SLIDES = [
 ];
 const SLIDE_MS = 6500;
 const EASE = [0.22, 1, 0.36, 1] as const;
-const TITLE = "L'excellence hôtelière, en plein cœur de Yaoundé.";
 
-const content: Variants = {
+const copy: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
 };
@@ -43,7 +43,7 @@ const word: Variants = {
   visible: { y: "0%", transition: { duration: 0.9, ease: EASE } },
 };
 
-export default function Hero() {
+export default function Hero({ content }: { content: SiteContent["hero"] }) {
   const ref = useRef<HTMLElement>(null);
   const introDone = useIntroDone();
   const reduceMotion = useReducedMotion();
@@ -107,7 +107,7 @@ export default function Hero() {
       <motion.div
         className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-24 pt-40 md:px-8 md:pb-28"
         style={reduceMotion ? undefined : { y: copyY, opacity: copyOpacity }}
-        variants={content}
+        variants={copy}
         initial="hidden"
         animate={state}
       >
@@ -121,10 +121,10 @@ export default function Hero() {
 
         <motion.h1
           variants={title}
-          aria-label={TITLE}
+          aria-label={content.title}
           className="font-display text-balance mt-5 max-w-3xl text-5xl font-semibold leading-[1.08] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.35)] sm:text-6xl md:text-7xl"
         >
-          {TITLE.split(" ").map((w, i) => (
+          {content.title.split(" ").map((w, i) => (
             <span key={i} aria-hidden="true" className="inline-block overflow-hidden pb-[0.08em] align-bottom">
               <motion.span variants={word} className="inline-block">
                 {w}
@@ -135,9 +135,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p variants={rise} className="mt-6 max-w-xl text-lg leading-relaxed text-stone-soft/90">
-          Chambres raffinées, salles de réunion équipées, parking sécurisé et
-          jardins événementiels : l&apos;Hôtel Excellexior accueille vos
-          séjours d&apos;affaires comme vos grands jours.
+          {content.subtitle}
         </motion.p>
 
         <motion.div variants={rise} className="mt-9 flex flex-wrap items-center gap-4">
@@ -150,14 +148,14 @@ export default function Hero() {
               aria-hidden="true"
               className="absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/40 transition-transform duration-700 group-hover:translate-x-[400%]"
             />
-            Réserver une chambre
+            {content.primaryCta}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
           <Link
             href="/chambres"
             className="cursor-pointer rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:border-brass hover:text-brass"
           >
-            Voir les chambres
+            {content.secondaryCta}
           </Link>
         </motion.div>
       </motion.div>
@@ -172,10 +170,10 @@ export default function Hero() {
       >
         <div className="flex items-center gap-2 text-brass">
           <PlaneLanding className="h-4 w-4" aria-hidden="true" />
-          <span className="text-xs font-semibold uppercase tracking-wider">Aéroport Nsimalen</span>
+          <span className="text-xs font-semibold uppercase tracking-wider">{content.airportTitle}</span>
         </div>
-        <p className="mt-1 font-display text-2xl font-semibold text-white">≈ 25 min</p>
-        <p className="text-xs text-stone-soft/60">Navette sur demande</p>
+        <p className="mt-1 font-display text-2xl font-semibold text-white">{content.airportValue}</p>
+        <p className="text-xs text-stone-soft/60">{content.airportNote}</p>
       </motion.div>
 
       {/* Slide indicators: the active one fills up over the slide's duration.

@@ -84,11 +84,11 @@ export const MEETING_SPACES = [
     features: ["Configuration modulable (U, théâtre, classe)", "Écran interactif", "Service traiteur", "Secrétariat sur demande"],
   },
   {
-    name: "Jardin & Terrasse Événementielle",
+    name: "Restaurant, Traiteur & Événementiel",
     photo: "/photos/salle-banquet.webp",
     capacity: "Jusqu'à 300 invités",
-    bestFor: "Mariages, réceptions, cocktails d'entreprise",
-    features: ["Espace extérieur paysager", "Décoration personnalisable", "Traiteur & bar dédiés", "Éclairage d'ambiance", "Parking dédié aux invités"],
+    bestFor: "Mariages, réceptions, dîners et cocktails d'entreprise",
+    features: ["Salle de banquet climatisée", "Service traiteur & buffet", "Bar dédié", "Décoration personnalisable", "Parking dédié aux invités"],
   },
 ] as const;
 

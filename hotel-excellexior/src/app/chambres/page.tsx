@@ -6,8 +6,10 @@ import Footer from "@/components/footer";
 import HotelPhoto from "@/components/hotel-photo";
 import PhotoCarousel from "@/components/photo-carousel";
 import Reveal from "@/components/motion/reveal";
-import { ROOM_TYPES, roomAlbum } from "@/lib/constants";
+import { roomAlbum } from "@/lib/constants";
 import { getAllAlbums } from "@/lib/photos";
+import { roomsWithContent } from "@/lib/content";
+import { getSiteContent } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Chambres & Suites",
@@ -16,7 +18,8 @@ export const metadata: Metadata = {
 };
 
 export default async function ChambresPage() {
-  const albums = await getAllAlbums();
+  const [albums, content] = await Promise.all([getAllAlbums(), getSiteContent()]);
+  const rooms = roomsWithContent(content);
 
   return (
     <>
@@ -35,21 +38,20 @@ export default async function ChambresPage() {
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 pt-32 md:px-8">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brass">
-              Hébergement
+              {content.roomsPage.eyebrow}
             </p>
             <h1 className="font-display text-balance mt-3 max-w-2xl text-5xl font-semibold text-white md:text-6xl">
-              Nos chambres & suites
+              {content.roomsPage.title}
             </h1>
             <p className="mt-5 max-w-xl text-base text-stone-soft/80">
-              Quatre catégories pensées pour chaque type de séjour, de la
-              chambre Standard à la Suite Présidentielle.
+              {content.roomsPage.text}
             </p>
           </div>
         </section>
 
         <section className="px-6 py-20 md:px-8 md:py-24">
           <div className="mx-auto flex max-w-7xl flex-col gap-20">
-            {ROOM_TYPES.map((room, i) => (
+            {rooms.map((room, i) => (
               <div
                 key={room.slug}
                 id={room.slug}

@@ -2,16 +2,20 @@
 
 import Link from "next/link";
 import { ArrowRight, Maximize, Users } from "lucide-react";
-import { ROOM_TYPES } from "@/lib/constants";
 import Reveal from "@/components/motion/reveal";
 import StaggerGroup, { staggerItem } from "@/components/motion/stagger-group";
 import HotelPhoto from "@/components/hotel-photo";
 import type { SitePhoto } from "@/lib/photos";
+import type { SiteContent, roomsWithContent } from "@/lib/content";
 import { motion } from "framer-motion";
 
 export default function RoomsTeaser({
+  content,
+  rooms,
   coverPhotos,
 }: {
+  content: SiteContent["roomsTeaser"];
+  rooms: ReturnType<typeof roomsWithContent>;
   /** First photo of each room's carousel, keyed by room slug. */
   coverPhotos: Partial<Record<string, SitePhoto>>;
 }) {
@@ -21,23 +25,23 @@ export default function RoomsTeaser({
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">
-              Hébergement
+              {content.eyebrow}
             </p>
             <h2 className="font-display text-balance mt-3 max-w-xl text-4xl font-semibold text-ink md:text-5xl">
-              Des chambres pensées pour chaque séjour
+              {content.title}
             </h2>
           </div>
           <Link
             href="/chambres"
             className="group inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-ink hover:text-burgundy"
           >
-            Voir toutes les chambres
+            {content.link}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </Reveal>
 
         <StaggerGroup className="mt-12 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
-          {ROOM_TYPES.map((room) => (
+          {rooms.map((room) => (
             <motion.div key={room.slug} variants={staggerItem}>
               <Link
                 href={`/chambres#${room.slug}`}
