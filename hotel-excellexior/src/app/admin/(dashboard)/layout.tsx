@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BedDouble, LayoutDashboard, Mail } from "lucide-react";
+import { BedDouble, KeyRound, LayoutDashboard, Mail } from "lucide-react";
 import { getSession } from "@/lib/auth";
 import LogoutButton from "@/components/admin/logout-button";
 
@@ -7,6 +7,7 @@ const NAV = [
   { href: "/admin", label: "Vue d'ensemble", icon: LayoutDashboard },
   { href: "/admin/reservations", label: "Réservations", icon: BedDouble },
   { href: "/admin/messages", label: "Messages", icon: Mail },
+  { href: "/admin/mot-de-passe", label: "Mot de passe", icon: KeyRound },
 ];
 
 export default async function AdminDashboardLayout({
