@@ -16,7 +16,7 @@ export default function RoomsTeaser({
   coverPhotos: Partial<Record<string, SitePhoto>>;
 }) {
   return (
-    <section className="bg-stone px-6 py-20 md:px-8 md:py-28">
+    <section id="chambres-apercu" className="scroll-mt-20 bg-stone px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>

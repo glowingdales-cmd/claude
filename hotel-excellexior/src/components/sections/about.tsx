@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import Reveal from "@/components/motion/reveal";
+import ImageReveal from "@/components/motion/image-reveal";
 import HotelPhoto from "@/components/hotel-photo";
 
 const HIGHLIGHTS = [
@@ -13,13 +14,13 @@ export default function About() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-28">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
-        <Reveal>
+        <ImageReveal>
           <HotelPhoto
             src="/photos/cour-interieure.webp"
             alt="Cour intérieure arborée de l'hôtel et galeries des chambres"
             className="aspect-[4/5] w-full rounded-sm"
           />
-        </Reveal>
+        </ImageReveal>
 
         <Reveal delay={0.1}>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burgundy">

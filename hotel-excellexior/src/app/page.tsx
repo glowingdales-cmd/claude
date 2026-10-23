@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SiteIntro from "@/components/site-intro";
+import ScrollProgress from "@/components/motion/scroll-progress";
 import Hero from "@/components/sections/hero";
 import StatsStrip from "@/components/sections/stats-strip";
 import About from "@/components/sections/about";
@@ -26,6 +27,7 @@ export default async function HomePage() {
   return (
     <>
       <SiteIntro />
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
