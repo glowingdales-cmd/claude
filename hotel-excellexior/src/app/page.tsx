@@ -14,21 +14,28 @@ import Location from "@/components/sections/location";
 import PaymentMethods from "@/components/sections/payment-methods";
 import Faq from "@/components/sections/faq";
 import FinalCta from "@/components/sections/final-cta";
+import { GALLERY_ALBUM, ROOM_TYPES, roomAlbum } from "@/lib/constants";
+import { getAllAlbums } from "@/lib/photos";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const albums = await getAllAlbums();
+  const coverPhotos = Object.fromEntries(
+    ROOM_TYPES.map((room) => [room.slug, albums[roomAlbum(room.slug)]?.[0]]),
+  );
+
   return (
     <>
       <SiteIntro />
       <Navbar />
       <main>
         <Hero />
+        <RoomsTeaser coverPhotos={coverPhotos} />
         <StatsStrip />
         <About />
-        <RoomsTeaser />
         <EventsMeeting />
         <Parking />
         <Services />
-        <Gallery />
+        <Gallery photos={albums[GALLERY_ALBUM] ?? []} />
         <Testimonials />
         <Location />
         <PaymentMethods />

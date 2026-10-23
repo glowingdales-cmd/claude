@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-burgundy via-burgundy/60 to-burgundy/10"
+        className="absolute inset-0 bg-gradient-to-t from-burgundy/90 via-burgundy/30 to-transparent"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-8 md:pb-24">

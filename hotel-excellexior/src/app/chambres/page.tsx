@@ -4,8 +4,10 @@ import { CheckCircle2, Maximize, Users } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import HotelPhoto from "@/components/hotel-photo";
+import PhotoCarousel from "@/components/photo-carousel";
 import Reveal from "@/components/motion/reveal";
-import { ROOM_TYPES } from "@/lib/constants";
+import { ROOM_TYPES, roomAlbum } from "@/lib/constants";
+import { getAllAlbums } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Chambres & Suites",
@@ -13,7 +15,9 @@ export const metadata: Metadata = {
     "Découvrez les chambres Standard, Deluxe, Suite Exécutive et Suite Présidentielle de l'Hôtel Excellexior à Yaoundé : équipements, tarifs et réservation.",
 };
 
-export default function ChambresPage() {
+export default async function ChambresPage() {
+  const albums = await getAllAlbums();
+
   return (
     <>
       <Navbar />
@@ -52,9 +56,9 @@ export default function ChambresPage() {
                 className="scroll-mt-28 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
               >
                 <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <HotelPhoto
-                    src={room.photo}
-                    alt={room.name}
+                  <PhotoCarousel
+                    photos={albums[roomAlbum(room.slug)] ?? []}
+                    label={`Photos — ${room.name}`}
                     className="aspect-[4/3] w-full rounded-sm"
                   />
                 </Reveal>

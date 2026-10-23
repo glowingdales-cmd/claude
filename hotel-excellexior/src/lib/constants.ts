@@ -17,7 +17,6 @@ export const ROOM_TYPES = [
   {
     slug: "standard",
     name: "Chambre Standard",
-    photo: "/photos/chambre-standard.webp",
     price: 35000,
     capacity: 2,
     size: 22,
@@ -28,7 +27,6 @@ export const ROOM_TYPES = [
   {
     slug: "deluxe",
     name: "Chambre Deluxe",
-    photo: "/photos/chambre-deluxe.webp",
     price: 55000,
     capacity: 2,
     size: 30,
@@ -39,7 +37,6 @@ export const ROOM_TYPES = [
   {
     slug: "suite-executive",
     name: "Suite Exécutive",
-    photo: "/photos/suite-executive.webp",
     price: 85000,
     capacity: 3,
     size: 45,
@@ -50,7 +47,6 @@ export const ROOM_TYPES = [
   {
     slug: "suite-presidentielle",
     name: "Suite Présidentielle",
-    photo: "/photos/suite-presidentielle.webp",
     price: 150000,
     capacity: 4,
     size: 70,
@@ -59,6 +55,18 @@ export const ROOM_TYPES = [
     amenities: ["Salle à manger privée", "Salon de réception", "2 salles de bain", "Butler sur demande", "Transfert aéroport inclus", "Vue panoramique"],
   },
 ] as const;
+
+export type RoomSlug = (typeof ROOM_TYPES)[number]["slug"];
+
+export const GALLERY_ALBUM = "gallery";
+export const roomAlbum = (slug: RoomSlug) => `room:${slug}`;
+
+// Photo albums editable from /admin/photos, with the maximum number of
+// photos each one accepts.
+export const PHOTO_ALBUMS = [
+  ...ROOM_TYPES.map((room) => ({ id: roomAlbum(room.slug), label: room.name, max: 5 })),
+  { id: GALLERY_ALBUM, label: "Galerie de la page d'accueil", max: 12 },
+];
 
 export const MEETING_SPACES = [
   {

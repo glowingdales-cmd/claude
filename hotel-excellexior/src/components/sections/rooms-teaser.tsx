@@ -6,9 +6,15 @@ import { ROOM_TYPES } from "@/lib/constants";
 import Reveal from "@/components/motion/reveal";
 import StaggerGroup, { staggerItem } from "@/components/motion/stagger-group";
 import HotelPhoto from "@/components/hotel-photo";
+import type { SitePhoto } from "@/lib/photos";
 import { motion } from "framer-motion";
 
-export default function RoomsTeaser() {
+export default function RoomsTeaser({
+  coverPhotos,
+}: {
+  /** First photo of each room's carousel, keyed by room slug. */
+  coverPhotos: Partial<Record<string, SitePhoto>>;
+}) {
   return (
     <section className="bg-stone px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
@@ -38,12 +44,16 @@ export default function RoomsTeaser() {
                 className="group block cursor-pointer overflow-hidden rounded-sm bg-stone-soft shadow-sm shadow-black/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/15"
               >
                 <div className="overflow-hidden">
-                  <HotelPhoto
-                    src={room.photo}
-                    alt={room.name}
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-110"
-                  />
+                  {coverPhotos[room.slug] ? (
+                    <HotelPhoto
+                      src={coverPhotos[room.slug]!.url}
+                      alt={room.name}
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="aspect-[4/3] w-full bg-gradient-to-br from-burgundy via-burgundy-deep to-ink" />
+                  )}
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-lg font-semibold text-ink">

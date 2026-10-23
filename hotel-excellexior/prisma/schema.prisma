@@ -49,3 +49,17 @@ model AdminUser {
   passwordHash String
   name         String?
 }
+
+// Photos shown in the room carousels and the home-page gallery, managed from
+// /admin/photos. `album` is "gallery" or "room:<slug>" (see PHOTO_ALBUMS).
+// `url` is either a bundled /photos/* file or an uploaded /media/* file.
+model Photo {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  album     String
+  url       String
+  alt       String
+  position  Int
+
+  @@index([album, position])
+}
