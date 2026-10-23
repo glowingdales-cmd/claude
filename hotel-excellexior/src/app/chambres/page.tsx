@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BedDouble, CheckCircle2, Maximize, Users } from "lucide-react";
+import { CheckCircle2, Maximize, Users } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import PhotoPlaceholder from "@/components/photo-placeholder";
+import HotelPhoto from "@/components/hotel-photo";
 import Reveal from "@/components/motion/reveal";
 import { ROOM_TYPES } from "@/lib/constants";
 
@@ -19,12 +19,15 @@ export default function ChambresPage() {
       <Navbar />
       <main>
         <section className="relative flex min-h-[48vh] items-end overflow-hidden">
-          <PhotoPlaceholder
-            icon={BedDouble}
-            label="Suites de l'hôtel — photo à venir"
-            tone="dark"
-            className="absolute inset-0 h-full w-full"
-          />
+          <div className="absolute inset-0">
+            <HotelPhoto
+              src="/photos/chambre-literie.webp"
+              alt="Lit dressé avec le linge aux couleurs de l'hôtel"
+              sizes="100vw"
+              priority
+              className="h-full w-full"
+            />
+          </div>
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 pt-32 md:px-8">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brass">
@@ -49,9 +52,9 @@ export default function ChambresPage() {
                 className="scroll-mt-28 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
               >
                 <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <PhotoPlaceholder
-                    icon={BedDouble}
-                    label={`${room.name} — photo à venir`}
+                  <HotelPhoto
+                    src={room.photo}
+                    alt={room.name}
                     className="aspect-[4/3] w-full rounded-sm"
                   />
                 </Reveal>

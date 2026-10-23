@@ -1,6 +1,6 @@
-import { CheckCircle2, ConciergeBell } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import Reveal from "@/components/motion/reveal";
-import PhotoPlaceholder from "@/components/photo-placeholder";
+import HotelPhoto from "@/components/hotel-photo";
 
 const HIGHLIGHTS = [
   "Réception et sécurité ouvertes 24h/24",
@@ -14,9 +14,9 @@ export default function About() {
     <section className="mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-28">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
         <Reveal>
-          <PhotoPlaceholder
-            icon={ConciergeBell}
-            label="Hall de réception — photo à venir"
+          <HotelPhoto
+            src="/photos/cour-interieure.webp"
+            alt="Cour intérieure arborée de l'hôtel et galeries des chambres"
             className="aspect-[4/5] w-full rounded-sm"
           />
         </Reveal>

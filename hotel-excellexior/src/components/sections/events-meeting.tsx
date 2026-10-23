@@ -2,13 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CalendarHeart, CheckCircle2, Presentation, Sparkles } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { MEETING_SPACES } from "@/lib/constants";
 import Reveal from "@/components/motion/reveal";
 import StaggerGroup, { staggerItem } from "@/components/motion/stagger-group";
-import PhotoPlaceholder from "@/components/photo-placeholder";
-
-const ICONS = [Presentation, CalendarHeart, Sparkles];
+import HotelPhoto from "@/components/hotel-photo";
 
 export default function EventsMeeting() {
   return (
@@ -30,8 +28,7 @@ export default function EventsMeeting() {
         </Reveal>
 
         <StaggerGroup className="mt-12 grid grid-cols-1 gap-7 lg:grid-cols-3">
-          {MEETING_SPACES.map((space, i) => {
-            const Icon = ICONS[i] ?? Presentation;
+          {MEETING_SPACES.map((space) => {
             return (
               <motion.div
                 key={space.name}
@@ -41,9 +38,10 @@ export default function EventsMeeting() {
                 className="group overflow-hidden rounded-sm bg-stone shadow-sm shadow-black/5 hover:shadow-xl hover:shadow-black/15"
               >
                 <div className="overflow-hidden">
-                  <PhotoPlaceholder
-                    icon={Icon}
-                    label={`${space.name} — photo à venir`}
+                  <HotelPhoto
+                    src={space.photo}
+                    alt={space.name}
+                    sizes="(min-width: 1024px) 33vw, 100vw"
                     className="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>

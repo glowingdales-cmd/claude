@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Car, Clock3, ShieldCheck, Video } from "lucide-react";
 import Reveal from "@/components/motion/reveal";
 import StaggerGroup, { staggerItem } from "@/components/motion/stagger-group";
-import PhotoPlaceholder from "@/components/photo-placeholder";
+import HotelPhoto from "@/components/hotel-photo";
 
 const FEATURES = [
   {
@@ -58,7 +58,11 @@ export default function Parking() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <PhotoPlaceholder icon={Car} label="Parking sécurisé — photo à venir" tone="dark" className="aspect-[4/5] w-full rounded-sm" />
+          <HotelPhoto
+            src="/photos/parking.webp"
+            alt="Parking sécurisé dans la cour intérieure de l'hôtel"
+            className="aspect-[4/5] w-full rounded-sm"
+          />
         </Reveal>
       </div>
     </section>

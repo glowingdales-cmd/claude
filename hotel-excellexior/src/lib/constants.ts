@@ -17,6 +17,7 @@ export const ROOM_TYPES = [
   {
     slug: "standard",
     name: "Chambre Standard",
+    photo: "/photos/chambre-standard.webp",
     price: 35000,
     capacity: 2,
     size: 22,
@@ -27,6 +28,7 @@ export const ROOM_TYPES = [
   {
     slug: "deluxe",
     name: "Chambre Deluxe",
+    photo: "/photos/chambre-deluxe.webp",
     price: 55000,
     capacity: 2,
     size: 30,
@@ -37,6 +39,7 @@ export const ROOM_TYPES = [
   {
     slug: "suite-executive",
     name: "Suite Exécutive",
+    photo: "/photos/suite-executive.webp",
     price: 85000,
     capacity: 3,
     size: 45,
@@ -47,6 +50,7 @@ export const ROOM_TYPES = [
   {
     slug: "suite-presidentielle",
     name: "Suite Présidentielle",
+    photo: "/photos/suite-presidentielle.webp",
     price: 150000,
     capacity: 4,
     size: 70,
@@ -59,18 +63,21 @@ export const ROOM_TYPES = [
 export const MEETING_SPACES = [
   {
     name: "Salle de Conférence Excellexior",
+    photo: "/photos/salle-conference.webp",
     capacity: "Jusqu'à 120 personnes",
     bestFor: "Conférences, séminaires, assemblées générales",
     features: ["Sonorisation professionnelle", "Vidéoprojecteur & écran géant", "Wi-Fi dédié", "Climatisation", "Pause-café & restauration sur demande"],
   },
   {
     name: "Salons Privés d'Affaires",
+    photo: "/photos/salon-affaires.webp",
     capacity: "8 à 40 personnes",
     bestFor: "Réunions de direction, formations, entretiens",
     features: ["Configuration modulable (U, théâtre, classe)", "Écran interactif", "Service traiteur", "Secrétariat sur demande"],
   },
   {
     name: "Jardin & Terrasse Événementielle",
+    photo: "/photos/salle-banquet.webp",
     capacity: "Jusqu'à 300 invités",
     bestFor: "Mariages, réceptions, cocktails d'entreprise",
     features: ["Espace extérieur paysager", "Décoration personnalisable", "Traiteur & bar dédiés", "Éclairage d'ambiance", "Parking dédié aux invités"],

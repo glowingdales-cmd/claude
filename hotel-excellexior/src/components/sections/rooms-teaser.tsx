@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BedDouble, Maximize, Users } from "lucide-react";
+import { ArrowRight, Maximize, Users } from "lucide-react";
 import { ROOM_TYPES } from "@/lib/constants";
 import Reveal from "@/components/motion/reveal";
 import StaggerGroup, { staggerItem } from "@/components/motion/stagger-group";
-import PhotoPlaceholder from "@/components/photo-placeholder";
+import HotelPhoto from "@/components/hotel-photo";
 import { motion } from "framer-motion";
 
 export default function RoomsTeaser() {
@@ -38,9 +38,10 @@ export default function RoomsTeaser() {
                 className="group block cursor-pointer overflow-hidden rounded-sm bg-stone-soft shadow-sm shadow-black/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/15"
               >
                 <div className="overflow-hidden">
-                  <PhotoPlaceholder
-                    icon={BedDouble}
-                    label={`${room.name} — photo à venir`}
+                  <HotelPhoto
+                    src={room.photo}
+                    alt={room.name}
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     className="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>

@@ -4,21 +4,23 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, PlaneLanding } from "lucide-react";
 import { SITE } from "@/lib/constants";
-import PhotoPlaceholder from "@/components/photo-placeholder";
-import { Building2 } from "lucide-react";
+import HotelPhoto from "@/components/hotel-photo";
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden">
-      <PhotoPlaceholder
-        icon={Building2}
-        label="Façade de l'hôtel — photo à venir"
-        tone="dark"
-        className="absolute inset-0 h-full w-full"
-      />
+      <div className="absolute inset-0">
+        <HotelPhoto
+          src="/photos/facade-nuit.webp"
+          alt="Façade de l'Hôtel Excellexior illuminée de nuit"
+          sizes="100vw"
+          priority
+          className="h-full w-full"
+        />
+      </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-burgundy via-burgundy/70 to-burgundy/20"
+        className="absolute inset-0 bg-gradient-to-t from-burgundy via-burgundy/60 to-burgundy/10"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-8 md:pb-24">
